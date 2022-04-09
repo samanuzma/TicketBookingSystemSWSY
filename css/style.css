@@ -1,6 +1,6 @@
 .section {
 	position: relative;
-	height: 100vh;
+	height: 60vh; 
 }
 
 .section .section-center {
@@ -11,14 +11,16 @@
 }
 
 body{
-	background-color: #fffefe;
+	/* background-color: #5f2525; */
+	
+
+	background-size: cover;
+	background-position: center;
 }
 
 #booking {
 	font-family: 'PT Sans', sans-serif;
-	background-size: cover;
-	background-position: center;
-	margin-top: -15%;
+	margin-top: -10%;
 }
 
 
@@ -42,26 +44,39 @@ body{
 }
 
 #second-block{
-	/* display: none; */
-	visibility: hidden;
+
+	/* visibility: hidden; */
+	display: none;
 	margin-top: 40px;
 }
 
-header {
-	font-family: 'PT Sans', sans-serif;
-	/* background-image: url('/img/background.jpg'); */
-	background-color: red;
+#profiles{
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+}
 
+
+#header {
+	font-family: 'Dancing Script', cursive;
+	background-image: url('../img/destination.jpg');
 	background-size: cover;
 	background-position: center;
 	height: 400px;
 	text-align: center;
+	margin-top: -50px;
 }
+
+#footer{
+	color: white;
+	background-color: #f23e3e;
+	text-align: center;
+}
+
 
 
 h1{
 	font-size: 70px;
-	padding-top: 50px;
+	padding-top: 100px;
 }
 
 .booking-form {

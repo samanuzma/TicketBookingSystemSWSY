@@ -4,7 +4,7 @@ let validate = true;
 
 
 function AddElement() {
-  document.getElementById('second-block').style.cssText = 'visibility: visible';
+  document.getElementById('second-block').style.cssText = 'display:block';
   if(validate == true){
   var pName = "<div class='form-group grid-temp'><span class='form-label'>Name</span><input class='form-control p-name' type='text'></div>";
   var pAge = "<div class='form-group grid-temp'><span class='form-label'> Age </span><input class='form-control adultp-age childp-age' type='number'></div>";
