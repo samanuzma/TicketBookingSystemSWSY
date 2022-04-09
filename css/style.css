@@ -19,9 +19,33 @@ body{
 	background-size: cover;
 	background-position: center;
 	margin-top: -15%;
-
 }
 
+
+.required:after {
+    content:" *";
+    color: red;
+	font-size: 20px;
+  }
+
+#PassengerInfo{
+	display:grid; 
+	grid-template-columns: 30% 30% 40%;
+}
+
+.plist{
+	grid-column: 1/4;
+}
+
+.grid-temp{
+	padding: 10px;
+}
+
+#second-block{
+	/* display: none; */
+	visibility: hidden;
+	margin-top: 40px;
+}
 
 header {
 	font-family: 'PT Sans', sans-serif;
@@ -47,14 +71,19 @@ h1{
 	border-radius: 6px;	
 }
 
-#info{
+/* #info{
 	margin-top: 40px;
 	/* display: none; */
-}
+} */
 
 .booking-form .form-group {
 	position: relative;
 	margin-bottom: 20px;
+}
+
+.booking-form .form-group .cost-text {
+	padding-top: 25px;
+	font-family: 'PT Sans', sans-serif;
 }
 
 .booking-form .form-control {
@@ -95,8 +124,8 @@ h1{
 
 .booking-form select.form-control+.select-arrow {
 	position: absolute;
-	right: 10px;
-	bottom: 6px;
+	right: 20px;
+	bottom: 20px;
 	width: 32px;
 	line-height: 32px;
 	height: 32px;
@@ -111,6 +140,17 @@ h1{
 	display: block;
 	-webkit-transform: rotate(90deg);
 	transform: rotate(90deg);
+}
+
+.booking-form .form-control-address {
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.688);
+	height: 50px;
+	color: rgba(82, 82, 84, 0.4);
+	font-size: 16px;
+	font-weight: 400;
+	border-radius: 20px 0px 0px 20px;
+	padding: 0px 35px;
 }
 
 .booking-form .form-label {
@@ -215,3 +255,5 @@ h1{
 .booking-form .submit-btn:focus {
 	opacity: 0.9;
 }
+
+

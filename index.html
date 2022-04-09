@@ -24,7 +24,7 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
+		<script src="js\passengers.js"></script>
 </head>
 
 <body>
@@ -36,195 +36,163 @@
 	<main>
 		<div id="booking" class="section">
 			<div class="container">
-					<div class="booking-form">
-						<form>
-							<div class="form-group">
-								<div class="form-checkbox">
-									<label for="roundtrip">
-										<input type="radio" id="roundtrip" name="flight-type">
-										<span></span>Roundtrip
-									</label>
-									<label for="one-way">
-										<input type="radio" id="one-way" name="flight-type">
-										<span></span>One way
-									</label>
+				<div class="booking-form">
+					<form>
+						<div class="form-group">
+							<div class="form-checkbox">
+								<label for="roundtrip">
+								<input type="radio" id="roundtrip" name="flight-type">
+								<span></span>Roundtrip
+								</label>
+								<label for="one-way">
+								<input type="radio" id="one-way" name="flight-type">
+								<span></span>One way
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label required">From</span>
+									<input class="form-control" id="destination" type="text" placeholder="City Name">
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label">From</span>
-										<input class="form-control" id="destination" type="text" placeholder="City Name">
-									</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label required">To</span>
+									<input class="form-control" id="origin" type="text" placeholder="City Name">
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label">To</span>
-										<input class="form-control" id="origin" type="text" placeholder="City Name">
-									</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label required">Depart</span>
+									<input class="form-control" id="depart-date" type="date">
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label">Depart</span>
-										<input class="form-control" id="depart-date" type="date" required>
-									</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label">Return</span>
+									<input class="form-control" id=" return-date" type="date">
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label">Return</span>
-										<input class="form-control" id=" return-date" type="date" required>
-									</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-3">
+								<div class="form-group">
+                                    <span class="form-label required"> Adults(Age 12+) </span>
+									<input class="form-control" type="number" id="adults" min="1" max="10" value="1" name="adults" required>
 								</div>
 							</div>
 
-							<div class="row">
-								<div class="col-md-3">
-									<div class="form-group">
-                                        <span class="form-label"> Adults(Age 12+) </span>
-										<input class="form-control" type="number" id="adults" placeholder="No. of Adults">
-									</div>
+							<div class="col-md-3">
+                                <div class="form-group">
+                                    <span class="form-label"> Children(Age 1-15) </span>
+									<input class="form-control" type="number" id="children" placeholder="No. of Children">
 								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<span class="form-label required">Travel class</span>
+									<select class="form-control" id="travel-class">
+										<option>Economy class</option>
+										<option>Business class</option>
+										<option>First class</option>
+									</select>
+									<span class="select-arrow"></span>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-btn">
+									<button type="submit" class="submit-btn" onclick="AddElement();" form="form1" value="Submit">Submit</button>
+								</div>
+							</div>	
+						</div>
+					</form>
+				</div>
+
+				<div class="booking-form" id="second-block">
+					<form>      
+                        <div id="PassengerInfo">
+
+                        </div>  
+                        
+
+						<br><hr><br>
+
+						<div class="OtherDetails">
+							<h4> Other Details:</h4><br>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <span class="form-label required">Phone Number </span>
+                                        <input class="form-control p-number"  type="tel" placeholder="Enter your number">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <span class="form-label">Email Id</span>
+                                        <input class="form-control  p-email" type="email" placeholder="Enter your email id">
+                                    </div>
+                                </div>
 								<div class="col-md-3">
                                     <div class="form-group">
-                                        <span class="form-label"> Children(Age 1-15) </span>
-										<input class="form-control" type="number" id="children" placeholder="No. of Children">
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label">Travel class</span>
-										<select class="form-control" id="travel-class">
-											<option>Economy class</option>
-											<option>Business class</option>
-											<option>First class</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-btn">
-										<button class="submit-btn" id="book-flight" >Book FLight</button>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-
-					<div class="booking-form" id="info">	
-						<form>
-                            <div class="PassengerInfo">
-							    <h4> Passenger's Details:</h4><br>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <span class="form-label">Name</span>
-                                            <input class="form-control p-name" type="text" placeholder="Enter Your Name">
-                                        </div>
+                                        <span class="form-label required">Food type</span>
+                                        <select class="form-control" id="p-food">
+                                            <option>veg</option>
+                                            <option>non-veg</option>    
+                                        </select>
+                                        <span class="select-arrow"></span>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <span class="form-label">Phone Number </span>
-                                            <input class="form-control p-number"  type="tel" placeholder="Enter your number">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <span class="form-label">Email Id</span>
-                                            <input class="form-control  p-email" type="email" placeholder="Enter your email id">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <span class="form-label"> Age </span>
-                                            <input class="form-control adultp-age childp-age" type="number" placeholder="Enter your age">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <span class="form-label"></span>
-                                            <div class="form-gender-checkbox">
-                                                &nbsp;&nbsp;GENDER: &nbsp;&nbsp;
-                                                <label for="genderp-male">
-                                                    <input type="radio" class="genderp-male" name="flight-type">
-                                                    <span></span> Male
-                                                </label>
-                                                <label for="genderp-female">
-                                                    <input type="radio" class="genderp-female" name="flight-type">
-                                                    <span></span>Female
-                                                </label>
-                                                <label for="genderp-none">
-                                                    <input type="radio" class="genderp-none" name="flight-type">
-                                                    <span></span>Rather Not Say
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <span class="form-label">Food type</span>
-                                            <select class="form-control p-food">
-                                                <option>veg</option>
-                                                <option>non-veg</option>    
-                                            </select>
-                                            <span class="select-arrow"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <span class="form-label">Travel class</span>
-                                            <select class="form-control p-address">
-                                                <option>Economy class</option>
-                                                <option>Business class</option>
-                                                <option>First class</option>
-                                            </select>
-                                            <span class="select-arrow"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>  
-                            <br><hr><br>
-                            <div class="PaymentDetails">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <h4>Total Cost of the Ticket:$60</h4>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-											<span class="form-label">Payment Details</span>
-                                            <select class="form-control payment-method">
-                                                <option>Master Card</option>
-                                                <option>Visa</option>
-                                                <option>Paypal</option>
-                                            </select>
-                                            <span class="select-arrow"></span>
-                                        </div>
-                                    </div>
-
+                                </div>									
                             </div>
 
 							<div class="row">
+                                <div class="col-md-9">
+                                    <div class="form-group">
+										<span class="form-label">Address</span>
+										<textarea class="form-control" id="p-address" name="address" rows="4" cols="50">
+										</textarea>
+                                    </div>
+                                </div>	
+                            </div>
+						</div>
+
+                        <br><hr><br>
+
+                        <div class="PaymentDetails">
+							<div class="row">
+                            	<div class="col-md-3">
+                                	<div class="form-group">
+                                    	<h4 class="cost-text">Total Cost of the Ticket:$60</h4>
+                                	</div>
+                            	</div>
+								<div class="col-md-4">
+                                    <div class="form-group">
+										<span class="form-label">Payment Details</span>
+                                        <select class="form-control payment-method">
+                                            <option>Master Card</option>
+                                            <option>Visa</option>
+                                            <option>Paypal</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
 								<div class="col-md-4">
 									<div class="form-btn">
 										<button class="submit-btn" id="book-payment">Confirm Payment</button>
 									</div>
 								</div>
 							</div>
-						</form>
-					</div>
-                    <br><br>
+                        </div>
+					</form>
+				</div>
+                <br><br>
 			</div>
 		</div>
 	</main>
-
-	<footer>
-        
-	</footer>
-	
 </body>
+
+
 
 </html>
