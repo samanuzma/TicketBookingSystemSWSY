@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Booking Form HTML Template</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- <script src="..\js\cost.js"></script> -->
+</head>
+
+<body onload="AddElement()">
+	<div id="header">
+		<h1><span>Let the Journey Begin</span> </h1>
+	</div>
+
+	<main>
+		<div id="booking" class="section">
+			<div class="container">
+                <div class="booking-form">
+                    <h4><span id="travel-type">One Way</span></h4>
+                    <h2><span id="originp">SYDNEY</span> to <span id="destinationp">MELBOURNE</span></h2>
+                    <br>
+                    <h4>Departure Date : <span id="departp"></span></h4>
+                    <span id="arrivalp">Arrival Date: </span>
+                    <br>
+                    <h4>Passengers: <span id="adultp">2 </span> Adults and <span id="childp"> 0 </span> Children. </h4>	
+				</div>
+
+				<div class="booking-form" id="second-block">
+					<form onsubmit="return validateDetails()" action="thankyou.html">      
+                        <h3>Please fill the details below to continue</h3><br>
+                        <div id="PassengerInfo"> </div>  
+						<br><hr><br>
+
+						<div class="OtherDetails">
+							<h4> Other Details:</h4><br>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <span class="form-label required">Phone Number </span>
+                                        <input class="form-control p-number"  type="tel" placeholder="Enter your number">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <span class="form-label">Email Id</span>
+                                        <input class="form-control  p-email" type="email" placeholder="Enter your email id">
+                                    </div>
+                                </div>
+								<div class="col-md-3">
+                                    <div class="form-group">
+                                        <span class="form-label">Food type</span>
+                                        <select class="form-control" id="p-food">
+											<option><--Select--></option>
+                                            <option>veg</option>
+                                            <option>non-veg</option>    
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>									
+                            </div>
+
+							<div class="row">
+                                <div class="col-md-9">
+                                    <div class="form-group">
+										<span class="form-label">Address</span>
+										<textarea class="form-control" id="p-address" name="address" rows="4" cols="50">
+										</textarea>
+                                    </div>
+                                </div>	
+                            </div>
+						</div>
+
+                        <br><hr><br>
+
+                        <div class="PaymentDetails">
+							<div class="row">
+                            	<div class="col-md-3">
+                                	<div class="form-group">
+                                    	<h4 class="cost-text">Total Cost of the Ticket:$60</h4>
+                                	</div>
+                            	</div>
+								<div class="col-md-4">
+                                    <div class="form-group">
+										<span class="form-label">Payment Details</span>
+                                        <select class="form-control payment-method">
+                                            <option>Master Card</option>
+                                            <option>Visa</option>
+                                            <option>Paypal</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+								<div class="col-md-4">
+									<div class="form-btn">
+										<button class="submit-btn" id="book-payment">Confirm Payment</button>
+									</div>
+								</div>
+							</div>
+                        </div>
+					</form>
+				</div>
+				<br><br>
+				<div class="booking-form" id="footer">
+					<h3>Proudly Presenting Our Team</h3>
+					<hr>
+					<div id="profiles">
+						<section class="me">
+							<h4>Saman Uzma </h4>
+							<img src="img\linkedin.png" height="50px">
+						</section>
+						<section class="me">
+							<h4> Young </h4>
+							<img src="img\linkedin.png" height="50px">
+						</section>
+						<section class="me">
+							<h4>Sonia </h4>
+							<img src="img\linkedin.png" height="50px">
+						</section>
+						<section class="me">
+							<h4>William </h4>
+							<img src="img\linkedin.png" height="50px">
+						</section>
+					</div>
+				</div>
+				<br><br>
+			</div>
+		</div>
+	</main>
+
+	<script src="js\passengers.js"></script>
+
+</body>
+</html>

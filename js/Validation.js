@@ -1,8 +1,31 @@
 
-// How to fetch Id and Classes from HTML
 
-// let adultid = (id) => document.getElementById(adults);
-// let classes = (classes) => document.getElementsByClassName(classes);
 
-// Use id.value to fetch the value inside the fields
-// let adult_number = adultid.value;
+
+function validateToAndFrom() {
+    let originCity=document.getElementById("origin").value;
+    if(originCity=="" || originCity==null){
+      alert("Please Enter a city in 'To' field");
+      originCity.focus();
+      return false;
+    }
+    return true;
+  }
+
+// function passengerNum()
+//   {
+//     pNum.adultNum=document.getElementById("adults").value;
+//     pNum.childNum=document.getElementById("children").value;
+//   }
+  
+function validateAll(){
+    
+    if(validateToAndFrom()){
+      passengerNum();
+      return true
+    }
+    else return false;
+}
+  
+
+

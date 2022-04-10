@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Booking Form HTML Template</title>
+	<title>Booking Form</title>
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
@@ -26,20 +26,20 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-		<script src="js\passengers.js"></script>
+		
 		<!-- <script src="..\js\cost.js"></script> -->
 </head>
 
 <body>
 	<div id="header">
-		<h1><span>Let the Journey Begin</span> </h1>
+		<h1><span>Welcome to Our Website</span> </h1>
 	</div>
 
 	<main>
 		<div id="booking" class="section">
 			<div class="container">
 				<div class="booking-form">
-					<form name="form1">
+					<form name="top-form" onsubmit="return validateAll()" action="details.html" method="get">
 						<div class="form-group">
 							<div class="form-checkbox">
 								<label for="roundtrip">
@@ -56,25 +56,25 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label required">From</span>
-									<input class="form-control" id="origin" type="text" placeholder="Type City Name" required>
+									<input class="form-control" id="origin" type="text" name="origin" pattern="[a-zA_Z]{5,9}" placeholder="Type City Name" required>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label required">To</span>
-									<input class="form-control" id="destination" type="text" placeholder="Type City Name" required>
+									<input class="form-control" id="destination" type="text" name="destination" placeholder="Type City Name" required>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label required">Depart</span>
-									<input class="form-control" id="depart-date" type="date" required>
+									<input class="form-control" id="depart-date" type="date" name="depart-date" required>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label">Return</span>
-									<input class="form-control" id=" return-date" type="date">
+									<input class="form-control" id=" return-date" name="return-date" type="date">
 								</div>
 							</div>
 						</div>
@@ -95,7 +95,7 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label required">Travel class</span>
-									<select class="form-control" id="travel-class">
+									<select class="form-control" id="travel-class" name="travel-class"> 
 										<option>Economy class</option>
 										<option>Business class</option>
 										<option>First class</option>
@@ -105,86 +105,13 @@
 							</div>
 							<div class="col-md-3">
 								<div class="form-btn">
-									<button type="submit" class="submit-btn" form="form1"  onclick="topFormSubmit();" value="Submit">Submit</button>
+									<button type="submit"  class="submit-btn">Submit</button>
 								</div>
 							</div>	
 						</div>
 					</form>
 				</div>
 
-				<div class="booking-form" id="second-block">
-					<form>      
-                        <div id="PassengerInfo"></div>  
-                        
-						<br><hr><br>
-
-						<div class="OtherDetails">
-							<h4> Other Details:</h4><br>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <span class="form-label required">Phone Number </span>
-                                        <input class="form-control p-number"  type="tel" placeholder="Enter your number">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <span class="form-label">Email Id</span>
-                                        <input class="form-control  p-email" type="email" placeholder="Enter your email id">
-                                    </div>
-                                </div>
-								<div class="col-md-3">
-                                    <div class="form-group">
-                                        <span class="form-label required">Food type</span>
-                                        <select class="form-control" id="p-food">
-                                            <option>veg</option>
-                                            <option>non-veg</option>    
-                                        </select>
-                                        <span class="select-arrow"></span>
-                                    </div>
-                                </div>									
-                            </div>
-
-							<div class="row">
-                                <div class="col-md-9">
-                                    <div class="form-group">
-										<span class="form-label">Address</span>
-										<textarea class="form-control" id="p-address" name="address" rows="4" cols="50">
-										</textarea>
-                                    </div>
-                                </div>	
-                            </div>
-						</div>
-
-                        <br><hr><br>
-
-                        <div class="PaymentDetails">
-							<div class="row">
-                            	<div class="col-md-3">
-                                	<div class="form-group">
-                                    	<h4 class="cost-text">Total Cost of the Ticket:$60</h4>
-                                	</div>
-                            	</div>
-								<div class="col-md-4">
-                                    <div class="form-group">
-										<span class="form-label">Payment Details</span>
-                                        <select class="form-control payment-method">
-                                            <option>Master Card</option>
-                                            <option>Visa</option>
-                                            <option>Paypal</option>
-                                        </select>
-                                        <span class="select-arrow"></span>
-                                    </div>
-                                </div>
-								<div class="col-md-4">
-									<div class="form-btn">
-										<button class="submit-btn" id="book-payment">Confirm Payment</button>
-									</div>
-								</div>
-							</div>
-                        </div>
-					</form>
-				</div>
 				<br><br>
 				<div class="booking-form" id="footer">
 					<h3>Proudly Presenting Our Team</h3>
@@ -213,7 +140,7 @@
 		</div>
 	</main>
 
-
+	<script src="js/Validation.js"></script>
 
 </body>
 

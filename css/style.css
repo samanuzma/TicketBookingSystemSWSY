@@ -47,7 +47,7 @@ body{
 #second-block{
 
 	/* visibility: hidden; */
-	display: none;
+	/* display: none; */
 	margin-top: 40px;
 }
 
