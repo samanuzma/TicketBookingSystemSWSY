@@ -19,7 +19,8 @@ body{
 }
 
 #booking {
-	font-family: 'PT Sans', sans-serif;
+	/* font-family: 'PT Sans', sans-serif; */
+	font-family: 'Poppins', sans-serif;
 	margin-top: -10%;
 }
 
@@ -57,27 +58,35 @@ body{
 
 
 #header {
-	font-family: 'Dancing Script', cursive;
+	font-family: 'Poppins', sans-serif;
 	background-image: url('../img/destination.jpg');
 	background-size: cover;
 	background-position: center;
-	height: 400px;
+	height: 500px;
 	text-align: center;
 	margin-top: -50px;
+}
+
+#header h1{
+	font-size: 50px;
+	padding-top: 200px;
+	color: white;
+}
+
+#header h1 span{
+	background-color: red;
 }
 
 #footer{
 	color: white;
 	background-color: #f23e3e;
 	text-align: center;
+	font-family: 'Poppins', sans-serif;
 }
 
 
 
-h1{
-	font-size: 70px;
-	padding-top: 100px;
-}
+
 
 .booking-form {
 	background: rgb(252, 252, 252);
@@ -86,10 +95,6 @@ h1{
 	border-radius: 6px;	
 }
 
-/* #info{
-	margin-top: 40px;
-	/* display: none; */
-} */
 
 .booking-form .form-group {
 	position: relative;
@@ -98,7 +103,8 @@ h1{
 
 .booking-form .form-group .cost-text {
 	padding-top: 25px;
-	font-family: 'PT Sans', sans-serif;
+	/* font-family: 'PT Sans', sans-serif; */
+	font-family: 'Poppins', sans-serif;
 }
 
 .booking-form .form-control {
@@ -140,7 +146,7 @@ h1{
 .booking-form select.form-control+.select-arrow {
 	position: absolute;
 	right: 20px;
-	bottom: 20px;
+	bottom: 10px;
 	width: 32px;
 	line-height: 32px;
 	height: 32px;

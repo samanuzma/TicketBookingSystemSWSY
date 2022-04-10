@@ -11,9 +11,8 @@
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"
 
 	<!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
@@ -28,18 +27,19 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<script src="js\passengers.js"></script>
+		<!-- <script src="..\js\cost.js"></script> -->
 </head>
 
 <body>
 	<div id="header">
-		<h1> Book Your Flight </h1>
+		<h1><span>Let the Journey Begin</span> </h1>
 	</div>
 
 	<main>
 		<div id="booking" class="section">
 			<div class="container">
 				<div class="booking-form">
-					<form>
+					<form name="form1">
 						<div class="form-group">
 							<div class="form-checkbox">
 								<label for="roundtrip">
@@ -56,19 +56,19 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label required">From</span>
-									<input class="form-control" id="destination" type="text" placeholder="City Name">
+									<input class="form-control" id="origin" type="text" placeholder="Type City Name" required>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label required">To</span>
-									<input class="form-control" id="origin" type="text" placeholder="City Name">
+									<input class="form-control" id="destination" type="text" placeholder="Type City Name" required>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label required">Depart</span>
-									<input class="form-control" id="depart-date" type="date">
+									<input class="form-control" id="depart-date" type="date" required>
 								</div>
 							</div>
 							<div class="col-md-3">
@@ -82,14 +82,14 @@
 							<div class="col-md-3">
 								<div class="form-group">
                                     <span class="form-label required"> Adults(Age 12+) </span>
-									<input class="form-control" type="number" id="adults" min="1" max="10" value="1" name="adults" required>
+									<input class="form-control" type="number" id="adults" min="1" max="5" value="1" name="adults" required>
 								</div>
 							</div>
 
 							<div class="col-md-3">
                                 <div class="form-group">
                                     <span class="form-label"> Children(Age 1-15) </span>
-									<input class="form-control" type="number" id="children" placeholder="No. of Children">
+									<input class="form-control" type="number" id="children" min="0" max="5" value="0" name="children">
 								</div>
 							</div>
 							<div class="col-md-3">
@@ -105,7 +105,7 @@
 							</div>
 							<div class="col-md-3">
 								<div class="form-btn">
-									<button type="submit" class="submit-btn" onclick="AddElement();" form="form1" value="Submit">Submit</button>
+									<button type="submit" class="submit-btn" form="form1"  onclick="topFormSubmit();" value="Submit">Submit</button>
 								</div>
 							</div>	
 						</div>
@@ -187,7 +187,7 @@
 				</div>
 				<br><br>
 				<div class="booking-form" id="footer">
-					<h3>Proudly Designed and Developed By:</h3>
+					<h3>Proudly Presenting Our Team</h3>
 					<hr>
 					<div id="profiles">
 						<section class="me">
