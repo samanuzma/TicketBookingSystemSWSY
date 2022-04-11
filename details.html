@@ -7,11 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Booking Form HTML Template</title>
+	<title>Passenger Details </title>
 
 	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"
 
 	<!-- Bootstrap -->
@@ -20,18 +18,11 @@
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		
-		<!-- <script src="..\js\cost.js"></script> -->
+
 </head>
 
 <body onload="AddElement()">
-	<div id="header">
+	<div id="detail-header">
 		<h1><span>Let the Journey Begin</span> </h1>
 	</div>
 
@@ -53,9 +44,9 @@
 							<br>
 							<h3>Ticket Cost : </h3>
 							<hr>
-							<h4 id="adult-cost">Adult Passengers: 2 X 25 = 50 AUD</h4>
-							<h4 id="child-cost">Child Passengers: 2 X 25 = 50 AUD</h4>
-							<h3>Total Cost : <span id="ticket-cost">80 AUD</span></h3>
+							<h4 id="adult-cost">Adult Passengers: 2 X 55 = 110 AUD</h4>
+							<h4 id="child-cost">Child Passengers: 1 X 30 = 30 AUD</h4>
+							<h3>Total Cost : <span id="ticket-cost">140 AUD</span></h3>
 						</div>		
 					</div>
 					<div class="row">
@@ -69,9 +60,10 @@
 				</div>
 
 				<div class="booking-form" id="second-block">
-					<form onsubmit="return validateDetails()" action="thankyou.html">      
+					<form name="top-form" id="form" action="thankyou.html" method="get">      
                         <h3>Please fill the details below to continue</h3><br>
                         <div id="PassengerInfo"> </div>  
+						<br><h4 id="error-message-passenger"> </h4>
 						<br><hr><br>
 
 						<div class="OtherDetails">
@@ -113,6 +105,7 @@
                             </div>
 						</div>
 
+						<br><h4 id="error-message-other"> </h4>
                         <br><hr><br>
 
                         <div class="PaymentDetails">
@@ -171,7 +164,7 @@
 		</div>
 	</main>
 
-	<script src="js\passengers.js"></script>
+	<script src="js/details.js"></script>
 
 </body>
 </html>
