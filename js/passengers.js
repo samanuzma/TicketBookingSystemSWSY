@@ -2,9 +2,10 @@
 
 
 function addElement(adultNum, childNum) {
-    var pName = "<div class='form-group grid-temp'><span class='form-label'>Name</span><input class='form-control p-name' type='text'></div>";
-    var pAge = "<div class='form-group grid-temp'><span class='form-label'> Age </span><input class='form-control min='1' max='50' adultp-age childp-age' type='number'></div>";
-    var pGender ="<div class='form-group grid-temp'><span class='form-label'>Gender</span><div class='form-gender-checkbox'><label for='genderp-male'><input type='radio' class='genderp-male' name='flight-type'><span></span> Male</label><label for='genderp-female'><input type='radio' class='genderp-female' name='flight-type'><span></span>Female</label><label for='genderp-none'><input type='radio' class='genderp-none' name='flight-type'><span></span>Rather Not Say</label></div></div>"
+    var pName = "<div class='form-group grid-temp'><span class='form-label required'>Name</span><input class='form-control p-name' type='text' pattern='[a-zA-Z ]{5,}' required></div>";
+    var aAge = "<div class='form-group grid-temp'><span class='form-label required'> Age </span><input class='form-control adultp-age' min='13' max='120' type='number' required></div>";
+    var cAge = "<div class='form-group grid-temp'><span class='form-labelrequired'> Age </span><input class='form-control childp-age' min='1' max='12' type='number' required></div>";
+    var pGender ="<div class='form-group grid-temp'><span class='form-label required'>Gender</span><div class='form-gender-checkbox'><label for='genderp-male'><input type='radio' class='genderp-male' name='gender'><span></span> Male</label><label for='genderp-female'><input type='radio' class='genderp-female' name='gender'><span></span>Female</label><label for='genderp-none'><input type='radio' class='genderp-none' name='gender'><span></span>Rather Not Say</label></div></div>"
 
     // let adultNum=document.getElementById("adults").value;
     // let childNum=document.getElementById("children").value;
@@ -12,13 +13,13 @@ function addElement(adultNum, childNum) {
     for(i=0;i<adultNum;i++){
       document.getElementById('PassengerInfo').innerHTML += `<h4 class='plist'>Adult Passenger ${i+1}:</h4>`;
       document.getElementById('PassengerInfo').innerHTML += pName;
-      document.getElementById('PassengerInfo').innerHTML += pAge;
+      document.getElementById('PassengerInfo').innerHTML += aAge;
       document.getElementById('PassengerInfo').innerHTML += pGender;
     }
     for(i=0;i<childNum;i++){
       document.getElementById('PassengerInfo').innerHTML += `<h4 class='plist'>Child Passenger ${i+1}:</h4>`;
       document.getElementById('PassengerInfo').innerHTML += pName;
-      document.getElementById('PassengerInfo').innerHTML += pAge;
+      document.getElementById('PassengerInfo').innerHTML += cAge;
       document.getElementById('PassengerInfo').innerHTML += pGender;
     }
 }

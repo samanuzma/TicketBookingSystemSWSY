@@ -84,7 +84,10 @@ body{
 	font-family: 'Poppins', sans-serif;
 }
 
-
+#error-message{
+	color: red;
+	text-align: center;
+}
 
 
 
@@ -101,8 +104,9 @@ body{
 	margin-bottom: 20px;
 }
 
-.booking-form .form-group .cost-text {
-	padding-top: 25px;
+.booking-form .form-group #cost-text {
+	padding-top: 30px;
+	padding-left: 30px;
 	/* font-family: 'PT Sans', sans-serif; */
 	font-family: 'Poppins', sans-serif;
 }

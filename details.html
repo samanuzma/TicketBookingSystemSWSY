@@ -39,13 +39,33 @@
 		<div id="booking" class="section">
 			<div class="container">
                 <div class="booking-form">
-                    <h4><span id="travel-type">One Way</span></h4>
-                    <h2><span id="originp">SYDNEY</span> to <span id="destinationp">MELBOURNE</span></h2>
-                    <br>
-                    <h4>Departure Date : <span id="departp"></span></h4>
-                    <span id="arrivalp"></span>
-                    <br>
-                    <h4>Passengers: <span id="adultp">2 </span> Adults and <span id="childp"> 0 </span> Children. </h4>	
+					<div class="row">
+						<div class="col-md-6">
+							<h4><span id="travel-type">One Way</span></h4>
+							<h1><span id="originp">SYDNEY</span> to <span id="destinationp">MELBOURNE</span></h1>
+							<br>
+							<h4>Departure Date : <span id="departp"></span></h4>
+							<span id="arrivalp"></span>
+							<br>
+							<h4>Passengers: <span id="adultp">2 </span> Adults and <span id="childp"> 0 </span> Children. </h4>	
+						</div>
+						<div class="col-md-6">
+							<br>
+							<h3>Ticket Cost : </h3>
+							<hr>
+							<h4 id="adult-cost">Adult Passengers: 2 X 25 = 50 AUD</h4>
+							<h4 id="child-cost">Child Passengers: 2 X 25 = 50 AUD</h4>
+							<h3>Total Cost : <span id="ticket-cost">80 AUD</span></h3>
+						</div>		
+					</div>
+					<div class="row">
+						<div class="col-md-8">
+						</div>
+						<div class="col-md-4">
+							<br><br>
+							<a href="./index.html"><button class="submit-btn">Cancel Ticket</button></a>
+						</div>		
+					</div>
 				</div>
 
 				<div class="booking-form" id="second-block">
@@ -60,13 +80,13 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <span class="form-label required">Phone Number </span>
-                                        <input class="form-control p-number"  type="tel" placeholder="Enter your number">
+                                        <input class="form-control" id="p-number" pattern="[0-9]{6,10}" type="tel" required>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <span class="form-label">Email Id</span>
-                                        <input class="form-control  p-email" type="email" placeholder="Enter your email id">
+                                        <input class="form-control" type="email" >
                                     </div>
                                 </div>
 								<div class="col-md-3">
@@ -99,13 +119,14 @@
 							<div class="row">
                             	<div class="col-md-3">
                                 	<div class="form-group">
-                                    	<h4 class="cost-text">Total Cost of the Ticket:$60</h4>
+                                    	<h4 id="cost-text">Total Cost: $60</h4>
                                 	</div>
                             	</div>
 								<div class="col-md-4">
                                     <div class="form-group">
-										<span class="form-label">Payment Details</span>
+										<span class="form-label required">Payment Details</span>
                                         <select class="form-control payment-method">
+											<option><--Select--></option>
                                             <option>Master Card</option>
                                             <option>Visa</option>
                                             <option>Paypal</option>

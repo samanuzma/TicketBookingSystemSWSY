@@ -32,18 +32,21 @@
 
 <body>
 	<div id="header">
-		<h1><span>Welcome to Our Website</span> </h1>
+		<h1><span>Explore the Land of Australia</span> </h1>
 	</div>
 
 	<main>
 		<div id="booking" class="section">
 			<div class="container">
 				<div class="booking-form">
-					<form name="top-form" onsubmit="return validateAll()" action="details.html" method="get">
+					<h4 id="error-message"> </h4>
+					<br>
+
+					<form name="top-form" id="form" action="details.html" method="get">
 						<div class="form-group">
 							<div class="form-checkbox">
 								<label for="roundtrip">
-								<input type="radio" id="roundtrip" name="flight-type">
+								<input type="radio" id="roundtrip" name="flight-type" required>
 								<span></span>Roundtrip
 								</label>
 								<label for="one-way">
@@ -56,7 +59,7 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label required">From</span>
-									<input class="form-control" id="origin" type="text" name="origin" pattern="[a-zA_Z]{5,9}" placeholder="Type City Name" required>
+									<input class="form-control" id="origin" type="text" name="origin" placeholder="Type City Name" required>
 								</div>
 							</div>
 							<div class="col-md-3">
@@ -82,7 +85,7 @@
 							<div class="col-md-3">
 								<div class="form-group">
                                     <span class="form-label required"> Adults(Age 12+) </span>
-									<input class="form-control" type="number" id="adults" min="1" max="5" value="1" name="adults" required>
+									<input class="form-control" type="number" id="adults" min="1" max="10" value="1" name="adults" required>
 								</div>
 							</div>
 
@@ -105,7 +108,7 @@
 							</div>
 							<div class="col-md-3">
 								<div class="form-btn">
-									<button type="submit"  class="submit-btn">Submit</button>
+									<button type="submit" class="submit-btn">Submit</button>
 								</div>
 							</div>	
 						</div>
@@ -140,7 +143,7 @@
 		</div>
 	</main>
 
-	<script src="js/Validation.js"></script>
+	<script src="./js/Validation.js"></script>
 
 </body>
 
