@@ -132,7 +132,6 @@ function validateGender(){
 
 // Custom Validation to be activated at the time of Form Submit
 form.addEventListener("submit", (e) => {
-  alert("hello");
   if(!(validatePhone() && validatePayment())){
     e.preventDefault();
   }
