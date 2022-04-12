@@ -24,7 +24,7 @@ function printError(message){
 function validateCityList(){
   let originIndex = false;
   let destinationIndex = false;
-  let cityList = ["sydney", "melbourne", "brisbane"];
+  let cityList = ["sydney", "melbourne", "brisbane", ];
   let originCity = document.getElementById('origin').value;
   originCity = originCity.toLowerCase();
   let destinationCity = document.getElementById('destination').value;
@@ -58,7 +58,7 @@ function validateCityList(){
 // Validate that the Trip Type is selected
 function validateTripType(){
   if(!(document.getElementById('one-way').checked || document.getElementById('roundtrip').checked)){
-    printError("Please select your flight type");
+    printError("Please select your flight type ( Round Trip/One Way)");
     return false;
   }
   return true ;

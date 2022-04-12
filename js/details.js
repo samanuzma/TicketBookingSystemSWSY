@@ -111,7 +111,7 @@ function validatePhone(){
 
 // Validate if Payment Method is selected
 function  validatePayment(){
-  let payment =document.getElementById('payment-method').value;
+  let payment = document.getElementById('payment-method').value;
   if (payment == "<--Select-->") {
     printErrorOther("Please select payment method");
     return false ;	
@@ -122,7 +122,7 @@ function  validatePayment(){
 //Validate if Gender is selected
 function validateGender(){
   if(!(document.getElementByClass('genderp-male').checked || document.getElementByClass('genderp-female').checked || document.getElementByClass('genderp-none').checked)){
-    printError("Please select the Gender");
+    printErrorOther("Please select the Gender");
     return false;
   }
   return true ;
@@ -132,8 +132,8 @@ function validateGender(){
 
 // Custom Validation to be activated at the time of Form Submit
 form.addEventListener("submit", (e) => {
- // alert("helo");
-  if(!(validateGender() && validatePhone() && validatePayment())){
+  alert("hello");
+  if(!(validatePhone() && validatePayment())){
     e.preventDefault();
   }
 });
