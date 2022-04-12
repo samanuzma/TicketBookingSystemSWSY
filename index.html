@@ -36,11 +36,11 @@
 						<div class="form-group">
 							<div class="form-checkbox">
 								<label for="roundtrip">
-								<input type="radio" id="roundtrip" name="flight-type">
+								<input type="radio" id="roundtrip" name="flight-type" onchange="inactivateReturnDate()">
 								<span></span>Roundtrip
 								</label>
 								<label for="one-way">
-								<input type="radio" id="one-way" name="flight-type">
+								<input type="radio" id="one-way" name="flight-type" onchange="inactivateReturnDate()">
 								<span></span>One way
 								</label>
 							</div>
@@ -67,7 +67,7 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label">Return</span>
-									<input class="form-control" id=" return-date" name="return-date" type="date">
+									<input class="form-control" id="return-date" type="date" name="return-date" disabled>
 								</div>
 							</div>
 						</div>
@@ -82,7 +82,7 @@
 							<div class="col-md-3">
                                 <div class="form-group">
                                     <span class="form-label"> Children(Age 1-15) </span>
-									<input class="form-control" type="number" id="children" min="0" max="5" value="0" name="children">
+									<input class="form-control" type="number" id="children" min="0" max="10" value="0" name="children">
 								</div>
 							</div>
 							<div class="col-md-3">
@@ -136,7 +136,4 @@
 	<script src="./js/index.js"></script>
 
 </body>
-
-
-
 </html>

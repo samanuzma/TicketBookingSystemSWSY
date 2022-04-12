@@ -41,16 +41,21 @@ function validateCityList(){
 
 // Validate that the Trip Type is selected
 function validateTripType(){
-  let oneway  =  document.getElementById('oneway').value;
-  let roundtrip =  document.getElementById('roundtrip').value;
-    if(oneway == false && roundtrip == false){
-      printError("Please select your flight type");
-      return false;  
-    } 
+  if(!(document.getElementById('one-way').checked || document.getElementById('roundtrip').checked)){
+    printError("Please select your flight type");
+    return false;
+  }
   return true ;
 } 
 
-  
+//validateDate()
+function inactivateReturnDate(){
+  if(document.getElementById('roundtrip').checked){
+    document.getElementById('return-date').disabled = false;
+  }
+}
+
+
 form.addEventListener("submit", (e) => {
   if(!(validateCityList() && validateTripType())){
     e.preventDefault();
