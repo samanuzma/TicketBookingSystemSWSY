@@ -1,14 +1,5 @@
-// Prints the Error message below the Passenger details.
-function printErrorPassenger(message){
-  document.getElementById('error-message-passenger').innerHTML = `Error: ${message} <br>`;
-}
 
-// Prints the Error message below the other details
-function printErrorOther(message){
-  document.getElementById('error-message-other').innerHTML = `Error: ${message} <br>`;
-}
-
-// Add Passenger Details Fields as per the User Input for Number of Passengers
+// Add Passenger Fields as per the User Input for Number of Passengers
 function addElement(adultNum, childNum) {
     var pName = "<div class='form-group grid-temp'><span class='form-label required'>Name</span><input class='form-control p-name' type='text' pattern='[a-zA-Z ]{5,}' required></div>";
     var aAge = "<div class='form-group grid-temp'><span class='form-label required'> Age </span><input class='form-control adultp-age' min='13' max='120' type='number' required></div>";
@@ -89,9 +80,63 @@ window.addEventListener('load', () => {
 })
 
 
+// Prints the Error message below the Passenger details.
+function printErrorPassenger(message){
+  document.getElementById('error-message-passenger').innerHTML = `Error: ${message} <br>`;
+}
+
+// Prints the Error message below the other details
+function printErrorOther(message){
+  document.getElementById('error-message-other').innerHTML = `Error: ${message} <br>`;
+}
+
+// Validate Gender is Required
+function validateGender(){
+  let male = document.getElementByClass("genderp-male").value;
+  let female = document.getElementByClass("genderp-female").value;
+  let none = document.getElementByClass("genderp-none").value;
+  if (male == false && female == false && none == false){
+    printErrorPassenger("Please select your gender");
+    return false;
+  } 
+  return true;
+} 
+
+// Validate Passenger's Phone number / 10 digit /
+function validatePhone(){
+  let num = document.getElementById("p-number").value;
+  if (num == ""){
+    printErrorOther("Please enter phone number");
+    return false;
+  }
+  if (isNan(num)){
+    printErrorOther("Invalid number");
+    return false;
+  }
+  if (num.length>10 || num.length<6 ){
+    printErrorOther("Number should be between 6 to 10 digits");
+    return false;
+  }
+  if (num.indexOf('0')!== 0 ){
+    printErrorOther("First digit must be 0");
+    return false;
+  }
+  return true;
+}
+
+// Validate if Payment Method is selected
+function  validatePayment(){
+  let payment =document.getElementById("payment-method").value;
+  if (payment == "<--Select-->") {
+    printErrorOther("Please select payment option")
+    return false ;	
+  }
+  return true;
+}
+
 // Custom Validation to be activated at the time of Form Submit
 form.addEventListener("submit", (e) => {
-  if(!(validateCityList()&& validateTripType())){
+  if(!(validateGender() && validatePhone() && validatePayment())){
     e.preventDefault();
   }
 });

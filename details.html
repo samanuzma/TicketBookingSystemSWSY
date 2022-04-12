@@ -67,8 +67,14 @@
 						<br><hr><br>
 
 						<div class="OtherDetails">
-							<h4> Other Details:</h4><br>
+							<h4> Payment Details:</h4><br>
                             <div class="row">
+								<div class="col-md-3">
+                                    <div class="form-group">
+                                        <span class='form-label required'>Name</span>
+										<input class='form-control p-name' type='text' pattern='[a-zA-Z ]{5,}' required>
+                                    </div>
+                                </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <span class="form-label required">Phone Number </span>
@@ -77,8 +83,8 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <span class="form-label">Email Id</span>
-                                        <input class="form-control" type="email" >
+                                        <span class="form-label required">Email Id</span>
+                                        <input class="form-control" type="email" required>
                                     </div>
                                 </div>
 								<div class="col-md-3">
@@ -117,8 +123,8 @@
                             	</div>
 								<div class="col-md-4">
                                     <div class="form-group">
-										<span class="form-label required">Payment Details</span>
-                                        <select class="form-control payment-method">
+										<span class="form-label required">Payment Method</span>
+                                        <select class="form-control" id="payment-method">
 											<option><--Select--></option>
                                             <option>Master Card</option>
                                             <option>Visa</option>

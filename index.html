@@ -10,8 +10,6 @@
 	<title>Booking Form</title>
 
 	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"
 
 	<!-- Bootstrap -->
@@ -20,15 +18,7 @@
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		
-		<!-- <script src="..\js\cost.js"></script> -->
-</head>
+
 
 <body>
 	<div id="index-header">
@@ -46,7 +36,7 @@
 						<div class="form-group">
 							<div class="form-checkbox">
 								<label for="roundtrip">
-								<input type="radio" id="roundtrip" name="flight-type" required>
+								<input type="radio" id="roundtrip" name="flight-type">
 								<span></span>Roundtrip
 								</label>
 								<label for="one-way">
@@ -59,13 +49,13 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label required">From</span>
-									<input class="form-control" id="origin" type="text" name="origin" placeholder="Type City Name" required>
+									<input class="form-control" id="origin" type="text" name="origin" pattern="[A-Za-z]{3,}" placeholder="Type City Name" required>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<span class="form-label required">To</span>
-									<input class="form-control" id="destination" type="text" name="destination" placeholder="Type City Name" required>
+									<input class="form-control" id="destination" type="text" name="destination" pattern="[A-Za-z]{3,}" placeholder="Type City Name" required>
 								</div>
 							</div>
 							<div class="col-md-3">
@@ -143,7 +133,7 @@
 		</div>
 	</main>
 
-	<script src="./js/main.js"></script>
+	<script src="./js/index.js"></script>
 
 </body>
 

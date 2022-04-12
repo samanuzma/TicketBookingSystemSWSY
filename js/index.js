@@ -1,12 +1,3 @@
-// function validateToAndFrom() {
-//     let originCity=document.getElementById("origin").value;
-//     if(originCity=="" || originCity==null){
-//       alert("Please Enter a city in 'To' field");
-//       originCity.focus();
-//       return false;
-//     }
-//     return true;
-//   }
 
 // Prints the Error message on the Form.
 function printError(message){
@@ -23,13 +14,11 @@ function validateCityList(){
   originCity = originCity.toLowerCase();
   let destinationCity = document.getElementById('destination').value;
   destinationCity = destinationCity.toLowerCase();
-
   //check if the source city is same as destination city
   if(originCity == destinationCity){
     printError("Origin and Destination city cannot be same");
     return false;  
   }
-
   // Matching the source and destination input with the array of cities
   cityList.forEach((city)=>{
     if(city == originCity){
@@ -39,7 +28,6 @@ function validateCityList(){
       destinationIndex = true;
     }
   });
-
   if(!(originIndex)){
     printError("No available flights from the chosen Origin location");
     return false;   
@@ -51,20 +39,20 @@ function validateCityList(){
   return true;
 }
 
-
 // Validate that the Trip Type is selected
-function validateTripType() {
-  let oneway  =  document.getElementById("oneway").value;
-  let roundtrip =  document.getElementById ("roundtrip").value;
-    if (oneway == false && roundtrip == false){
+function validateTripType(){
+  let oneway  =  document.getElementById('oneway').value;
+  let roundtrip =  document.getElementById('roundtrip').value;
+    if(oneway == false && roundtrip == false){
       printError("Please select your flight type");
       return false;  
     } 
   return true ;
 } 
+
   
 form.addEventListener("submit", (e) => {
-  if(!(validateCityList()&& validateTripType())){
+  if(!(validateCityList() && validateTripType())){
     e.preventDefault();
   }
 });
