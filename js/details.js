@@ -44,12 +44,35 @@ function displayInfo(origin, destination, depart, rdate, adultNum, childNum){
   document.getElementById('childp').innerHTML = childNum;
 }
 
-// Calculate and Print the Cost of the ticket
-function ticketCost(){
-  
+
+// Calculate and print the cost of the ticket
+function ticketCost (adultNum, childNum, traveltype) {
+ // let costAdult = Math.floor(Math.random() * (100)) + 50;
+  let costAdult = 100;
+  // let roundtrip = document.getElementById('roundtrip').value;
+  // if (roundtrip === true ) {
+  //     costAdult = costAdult*2*0.75;
+  //     }
+  if (traveltype === "Business class") {
+      costAdult = 1.5*costAdult
+  }
+  if (traveltype === "First class") {
+      costAdult = 2*costAdult
+  }
+  let costChild = costAdult * 0.8;
+  let AdultTot = costAdult * adultNum;
+  let childTot = costChild * childNum;
+  let total = AdultTot + childTot;
+  if(childNum != 0){
+    document.getElementById('child-cost').innerHTML = `Child Passengers: ${childNum} X ${costChild} = ${childTot} AUD`;
+  }
+  document.getElementById('adult-cost').innerHTML = `${adultNum} X ${AdultTot} AUD`;
+  document.getElementById('ticket-cost').innerHTML = `${total} AUD`;
+  document.getElementById('cost-text').innerHTML = `Total Cost: ${total} AUD`;
 }
 
-// Display Ticket Details and Ticket Cost at the time of page load
+
+// Display Input Details and Ticket Cost at the time of page load
 window.addEventListener('load', () => {
   const params = (new URL(document.location)).searchParams;
   const origin = params.get('origin');
@@ -58,9 +81,10 @@ window.addEventListener('load', () => {
   const rdate = params.get('return-date');
   const adultNum = params.get('adults');
   const childNum = params.get('children');
+  const travelType = params.get('travel-class');
   displayInfo(origin, destination, depart, rdate, adultNum, childNum);
   addElement(adultNum, childNum);
-  ticketCost();
+  ticketCost(adultNum, childNum, travelType);
   document.getElementById('result-name').innerHTML = adultNum;
 })
 

@@ -41,11 +41,11 @@ function validateCityList(){
   });
 
   if(!(originIndex)){
-    printError("No available flights from the chosen location");
+    printError("No available flights from the chosen Origin location");
     return false;   
   }
   if(!(destinationIndex)){
-    printError("No available flights to the chosen location");
+    printError("No available flights to the chosen Destination location");
     return false;   
   }
   return true;
