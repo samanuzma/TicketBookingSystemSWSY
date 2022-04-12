@@ -24,7 +24,7 @@ function printError(message){
 function validateCityList(){
   let originIndex = false;
   let destinationIndex = false;
-  let cityList = ["sydney", "melbourne", "brisbane", ];
+  let cityList = ["sydney", "melbourne", "brisbane","perth","cairns","adelaide","darwin","townsville","hobart","canberra"];
   let originCity = document.getElementById('origin').value;
   originCity = originCity.toLowerCase();
   let destinationCity = document.getElementById('destination').value;
