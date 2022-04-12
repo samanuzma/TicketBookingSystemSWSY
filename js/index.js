@@ -1,4 +1,19 @@
 
+
+// Activate and DeactivateReturn Date as per the value selected in Radio Buttons
+function activateReturnDate(){
+  const input = document.getElementById('return-date');
+  if(document.getElementById('roundtrip').checked){
+    document.getElementById('return-date').disabled = false; 
+    input.setAttribute('required', '');
+    
+  }
+  if(document.getElementById('one-way').checked){
+    document.getElementById('return-date').disabled = true;
+    input.setAttribute('required');
+  }
+}
+
 // Prints the Error message on the Form.
 function printError(message){
   document.getElementById('error-message').innerHTML = `Error: ${message} <br>`;
@@ -39,6 +54,7 @@ function validateCityList(){
   return true;
 }
 
+
 // Validate that the Trip Type is selected
 function validateTripType(){
   if(!(document.getElementById('one-way').checked || document.getElementById('roundtrip').checked)){
@@ -48,12 +64,16 @@ function validateTripType(){
   return true ;
 } 
 
-//validateDate()
-function inactivateReturnDate(){
-  if(document.getElementById('roundtrip').checked){
-    document.getElementById('return-date').disabled = false;
-  }
-}
+
+
+// function validateDate(){
+//   let rdate = document.getElementById('roundtrip').value;
+//   if(document.getElementById('roundtrip').checked && rdate == null){
+//     printError("Please select the return date");
+//     return false;
+//   }
+//   return true;
+// }
 
 
 form.addEventListener("submit", (e) => {

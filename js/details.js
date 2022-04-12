@@ -38,8 +38,8 @@ function displayInfo(origin, destination, depart, rdate, adultNum, childNum){
 
 // Calculate and print the cost of the ticket
 function ticketCost (adultNum, childNum, traveltype) {
- // let costAdult = Math.floor(Math.random() * (100)) + 50;
-  let costAdult = 100;
+  let rNum = Math.floor(Math.random() * (100)) + 50;
+  let costAdult = rNum;
   // let roundtrip = document.getElementById('roundtrip').value;
   // if (roundtrip === true ) {
   //     costAdult = costAdult*2*0.75;
@@ -50,7 +50,7 @@ function ticketCost (adultNum, childNum, traveltype) {
   if (traveltype === "First class") {
       costAdult = 1.5 * costAdult
   }
-  let costChild = costAdult * 0.8;
+  let costChild = Math.floor(costAdult * 0.8);
   let AdultTot = costAdult * adultNum;
   let childTot = costChild * childNum;
   let total = AdultTot + childTot;
@@ -133,7 +133,7 @@ function validateGender(){
 // Custom Validation to be activated at the time of Form Submit
 form.addEventListener("submit", (e) => {
  // alert("helo");
-  if(!(validatePayment() && validatePhone() && validateGender())){
+  if(!(validateGender() && validatePhone() && validatePayment())){
     e.preventDefault();
   }
 });
